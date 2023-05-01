@@ -86,11 +86,11 @@ def simulate_rdm(A, func, D, init, tspan, K):
     cbar = fig.colorbar(c, shrink=0.7, aspect=5)
     #plt.clim(0,2)
     plt.xlabel('Node $i$')
-    plt.ylabel('time $(s)$')
+    plt.ylabel('time (s)')
     if K == 0:
-        plt.title('$\phi_i$ concentration')
+        plt.title('$u_i$ concentration')
     else:
-        plt.title('$\phi_i$ concentration, $K = $ %d' % K)
+        plt.title('$u_i$ concentration, $K = $ %d' % K)
     plt.show()
     
     # plotting psi concentrations
@@ -99,11 +99,11 @@ def simulate_rdm(A, func, D, init, tspan, K):
     cbar = fig.colorbar(c, shrink=0.7, aspect=5)
     #plt.clim(0,2)
     plt.xlabel('Node $i$')
-    plt.ylabel('time $(s)$')
+    plt.ylabel('time (s)')
     if K == 0:
-        plt.title('$\psi_i$ concentration')
+        plt.title('$v_i$ concentration')
     else:
-        plt.title('$\psi_i$ concentration, $K = $ %d' % K)
+        plt.title('$v_i$ concentration, $K = $ %d' % K)
     plt.show()
 
     return sol
@@ -213,7 +213,7 @@ def dispersion_relation(A, model, plot_output=True):
         lambs = (np.real(gamma), np.imag(gamma))
         
     if plot_output:
-        fig = plt.figure(figsize=(10,6))
+        fig = plt.figure(figsize=(8,6))
         plt.plot(lambs[0], lambs[1], 'ro')
         l0min = np.minimum(lambs[0].min(),-0.1)
         l0max = np.maximum(lambs[0].max(),0.1)
@@ -228,7 +228,7 @@ def dispersion_relation(A, model, plot_output=True):
         plt.title('Dispersion Relation: ' + model + ' model')
         plt.grid()
         
-        fig = plt.figure(figsize=(10,6))
+        fig = plt.figure(figsize=(8,6))
         plt.plot(-np.real(Lambda), lambs[0], 'bo')
         l0min = -1
         l0max = -1.2*np.real(Lambda).min()
