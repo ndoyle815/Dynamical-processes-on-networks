@@ -1,6 +1,5 @@
 # NB: required libraries
 import numpy as np
-import numpy.linalg as la
 import matplotlib.pyplot as plt
 import numpy.linalg as la
 from scipy.linalg import issymmetric
